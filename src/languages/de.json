@@ -1,0 +1,20 @@
+{
+  "translation": {
+    "nav": {
+      "about": "Über uns",
+      "profile": "Profil",
+      "logout": "Ausloggen",
+      "login": "Anmeldung",
+      "search": "Suchen"
+    },
+    "pages": {
+      "home": "Kürzlich hinzugefügte Artikel",
+      "home2": "Größte Sammlungen nach Artikeln",
+      "about": "Warum Sammel? Google dieses Wort auf Deutsch und es wird sehr einfach sein. Seit Anbeginn der Geschichte lieben es die Menschen, Dinge zu sammeln, Erfahrungen zu sammeln. Das ist es, was uns prägt: unser Gedächtnis, unsere Erfahrungen, unsere Interessen. Das Motto, das Mantra unseres Projekts: Sei du selbst hier. Wir möchten, dass Sie auf Ihrer brillanten Seite bleiben. Sammel ist eine einfache Webanwendung, mit der Sie Ihre persönlichen Sammlungen verwalten können! Wir alle lieben es, etwas zu sammeln, und manchmal möchten wir unser Hobby mit anderen teilen, manchmal machen wir es professionell, wie einige Winzer in Frankreich. In jedem Szenario ist die Sammlungsverwaltung ein großartiges Werkzeug, um sich selbst zu organisieren. Dieses Projekt ist speziell als Teil meines Praktikums bei Itransition konzipiert. Ich habe das ernsthafte Ziel, in diesem Unternehmen zu arbeiten und mich als Softwareentwickler auf Weltniveau weiterzuentwickeln. Lassen Sie dieses Projekt der Beginn meiner großartigen Reise sein! Ich hoffe, dass dieses Projekt für Sie, lieber Gast, interessant und nützlich sein wird.",
+      "about1": "Über dieses Projekt",
+      "about2": "Willkommen in unserem gemütlichen kleinen Wunderland, in dem Sie ganz Sie selbst sein können!",
+      "profile": "Willkommen in Ihrem Profil",
+      "profile1": "Sammlung hinzufügen"
+    }
+  }
+}

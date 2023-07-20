@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+.app_container {
+  background-color: var(--background-color);
+  min-height: 100vh !important;
+  padding-bottom: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.my-facebook-button-class {
+  border: none;
+  background-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*Nav*/
+.nav {
+  border: solid 1px black;
+  font-size: 12px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Nav_Tags {
+  background-color: var(--background-color-card-review);
+  color: var(--text-color-card-review) !important;
+}
+
+.my-facebook-button-class.metro {
+  background: none;
+}
+
+/*Card item*/
+
+.card_item_review {
+  background-color: var(--background-color-card-review);
+  color: var(--text-color-card-review);
+  box-shadow: var(--box-Shadow-title-review);
+}
+.card_aftor {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card_aftor_icon {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.cool_color {
+  color: #e6a0b1;
+}
+
+.tag_item {
+  display: inline-block;
+  align-items: center;
+  padding: 3px 8px;
+  margin-left: 5px;
+  border-radius: 10px;
+
+  background-color: var(--background-color-tags) !important;
+  color: var(--text-color-tags);
+  font-size: 11px;
+}
+.tag_form {
+  background-color: var(--background-color-tags--form) !important;
+}
+
+.card-img-top {
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+#text {
+  color: var(--text-color-card-review);
+}
+
+#button {
+  color: var(--button-text-color);
+}
+
+.comment_body {
+  background-color: var(--background-color-comment-body);
+  color: var(--text-color-comment);
+}
+
+.comment_header {
+  background-color: var(--background-color-comment-header);
+  color: var(--text-color-comment);
+}
+
+.blockquote-footer {
+  color: var(--text-color-comment);
+}
+
+/*review table*/
+.review_table {
+  color: var() !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  color: var(--text-color-card-review);
+}
+
+.table {
+  --bs-table-color: var(--text-color-card-review);
+  --bs-table-bg: transparent;
+  --bs-table-border-color: var(--bs-border-color);
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: var(--bs-body-color);
+  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+  --bs-table-active-color: var(--bs-body-color);
+  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+  --bs-table-hover-color: var(--text-color-card-review);
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+}
+.table:hover {
+  color: var(--text-color-card-review) !important;
+}
+
+@media (max-width: 767px) {
+  .review_info {
+    margin-top: 25px;
   }
 }

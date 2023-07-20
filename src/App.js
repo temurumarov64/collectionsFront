@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
+import AppRouter from "./components/AppRouter";
+import { useTheme } from "./hooks/useTheme";
+import UserProvider from "./components/AuthContext";
+import { setAuthToken } from "./api/setAuthToken";
 
 function App() {
+  const { theme, setTheme } = useTheme();
+  const token = localStorage.getItem("token");
+  if (token) {
+    setAuthToken(token);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+      <AppRouter />
+    </UserProvider>
   );
 }
 

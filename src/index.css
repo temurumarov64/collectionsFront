@@ -1,13 +1,70 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  /* font-family: "Montserrat"; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/*dark theme*/
+html[data-theme="dark"] {
+  --button-text-color: #ffffff;
+  --background-color: #121212;
+
+  /*main page*/
+  --background-color-card-review: rgb(85 88 99 / 85%);
+  --text-color-card-review: #e9ecef;
+  --background-color-tags: #bb86fc;
+  --text-color-tags: black;
+
+  /*component Tags*/
+  --background-color-tags--form: rgba(241, 241, 241, 0.1);
+
+  /*review page*/
+  --box-Shadow-title-review: 3px 5px 8px -5px #e6a0b1;
+  --background-color-review: #18171770;
+
+  /*component Comment*/
+  --background-color-comment-body: #000000a8;
+  --background-color-comment-header: #181717a8;
+  --text-color-comment: black;
+
+  --border-color: #aba9a900;
+
+  /*popup*/
+  --background-color-popup: rgb(50 51 51);
+}
+
+/*light theme*/
+html[data-theme="light"] {
+  --button-text-color: black;
+
+  /*main page*/
+  --background-color-card-review: rgba(245, 245, 245, 0.3);
+  --background-color-tags: #ffb6c1;
+  --text-color-tags: rgba(0, 0, 0, 0.2);
+
+  /*component Tags*/
+  --background-color-tags--form: rgba(241, 241, 241, 0.4);
+
+  /*review page*/
+  --box-Shadow-title-review: 0px 5px 5px -5px #9a8ea8;
+  --background-color-review: white;
+
+  /*component Comment*/
+  --background-color-comment-body: rgb(245, 245, 245);
+  --background-color-comment-header: #1817172e;
+  --text-color-comment: black;
+
+  --border-color: rgba(0, 0, 0, 0.211);
+
+  /*popup*/
+  --background-color-popup: white;
 }
