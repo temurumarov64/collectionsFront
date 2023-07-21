@@ -3,21 +3,23 @@ import { useState, useEffect } from "react";
 import { getUsersApi } from "../api/users";
 import { FaUserEdit, FaTrash } from "react-icons/fa";
 import { Row, Col, Button, Form, Modal } from "react-bootstrap";
-import { deleteUserApi } from "../api/users";
+import { deleteUserApi, updateUserRoleApi } from "../api/users";
+import { Typeahead } from "react-bootstrap-typeahead";
 
 function TableOfUsers() {
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [show, setShow] = useState(false);
+  const [role, setRole] = useState("");
 
-  const handleClose = () => { 
-    setCurrentUser(null)
-    setShow(false) 
-};
+  const handleClose = () => {
+    setCurrentUser(null);
+    setShow(false);
+  };
   const handleShow = (user) => {
-    setCurrentUser(user)
-    setShow(true)
-};
+    setCurrentUser(user);
+    setShow(true);
+  };
 
   const handleOpenModal = (user) => {
     handleShow(user);
@@ -31,6 +33,21 @@ function TableOfUsers() {
     fetchUsers();
   }, []);
 
+  const handleOnChangeFormValue = (role) => {
+    setRole(role);
+  };
+
+  const updateUserRole = (id) => {
+    updateUserRoleApi(id, role)
+      .then((res) => {
+        fetchUsers();
+      })
+      .catch((e) => {
+        console.log(e);
+      })
+      .finally(() => handleClose());
+  };
+
   const deleteUser = (id) => {
     deleteUserApi(id)
       .then((res) => {
@@ -41,6 +58,7 @@ function TableOfUsers() {
       });
   };
 
+  const options = ["user", "admin"];
   return (
     <div>
       <Table
@@ -95,7 +113,7 @@ function TableOfUsers() {
               <Modal.Title>Manage your users and even admins :) </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <Row className="mb-3">
+              {/* <Row className="mb-3">
                 <Form.Group as={Col}>
                   <Form.Label>Name</Form.Label>
                   <Form.Control
@@ -124,19 +142,23 @@ function TableOfUsers() {
                   placeholder="..."
                   // onChange={(event) => setDescription(event.target.value)}
                 />
-              </Form.Group>
+              </Form.Group> */}
 
               <Row className="mb-3">
                 <Form.Group as={Col}>
-                  <Form.Label>Choose a picture</Form.Label>
-                  <Form.Control type="file" class="hidden" />
-                </Form.Group>
-              </Row>
-
-              <Row className="mb-3">
-                <Form.Group as={Col}>
-                  <Form.Label>Choose a picture</Form.Label>
-                  <Form.Control type="text" value={currentUser.role} />
+                  <Form.Label>Current Role: {currentUser.role}</Form.Label>
+                  {/* <Form.Control type="text" value={currentUser.role} /> */}
+                  <Typeahead
+                    id="basic-typeahead-single"
+                    labelKey="name"
+                    value={role}
+                    onChange={(selected) => {
+                      handleOnChangeFormValue(selected[0]);
+                    }}
+                    options={options}
+                    placeholder="choose a role..."
+                    // selected={[formData.theme || ""]}
+                  />
                 </Form.Group>
               </Row>
             </Modal.Body>
@@ -150,8 +172,8 @@ function TableOfUsers() {
               </Button>
               <Button
                 variant="primary"
-                type="submit"
-                // onClick={handleClose}
+                
+                onClick={() => updateUserRole(currentUser.id)}
                 style={{ backgroundColor: "#C0CDF3 ", color: "#000" }}
               >
                 Create

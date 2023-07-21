@@ -17,3 +17,13 @@ export const getUsersApi = () => {
     return apiRequest(config);
   };
   
+  export const updateUserRoleApi = (id, role) => {
+    const config = {
+      method: "PUT",
+      url: `${BASE_URL}/api/v1/users/${id}`,
+      data: {
+        role,
+      },
+    };
+    return apiRequest(config);
+  };

@@ -18,7 +18,7 @@ export const createCollectionApi = (
       photo,
       extraFields,
     },
-    headers: { "Content-Type": "multipart/form-data" },
+    // headers: { "Content-Type": "multipart/form-data" },
   };
   return apiRequest(config);
 };
